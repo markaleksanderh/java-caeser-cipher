@@ -33,13 +33,19 @@ public class CaeserCipher {
     }
 
     public String decipher(String encrypted) {
-        String candidate;
-        int candidateScore;
+        String candidate = "";
+        double candidateScore = 0;
+        String candidateDecryption = "";
+        double candidateDecryptionScore = 0;
         for (int i = 0; i < alphaLower.length(); i++) {
-            String s = encipher(encrypted, i);
-//            System.out.println(s);
+            candidateDecryption = encipher(encrypted, i);
+            candidateDecryptionScore = score(candidateDecryption);
+            if (candidateDecryptionScore > candidateScore) {
+                candidateScore = candidateDecryptionScore;
+                candidate = candidateDecryption;
+            }
         }
-        return encrypted;
+        return candidate;
     }
 
 
