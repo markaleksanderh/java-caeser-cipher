@@ -1,5 +1,7 @@
 package caesercipher;
 
+import java.util.Scanner;
+
 public class CaeserCipher {
 
     private static String alphaLower = "abcdefghijklmnopqrstuvwxyz";
@@ -80,4 +82,17 @@ public class CaeserCipher {
         }
         return score;
     }
+    public static void main(String ... args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Encrypt (e) or decrypt (d)?");
+        String choice = in.next();
+        if (choice.charAt(0) == 'e') {
+            // Get user input
+        }
+        else if (choice.charAt(0) == 'd') {
+            // Get user input
+        }
+    }
+
+
 }
