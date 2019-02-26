@@ -27,5 +27,8 @@ public class CaeserTest {
         assertEquals("Here’s an example of an incredibly common kind of bug in Python.", cipher.decipher("Axkx’l tg xqtfiex hy tg bgvkxwbuer vhffhg dbgw hy unz bg Irmahg."));
     }
 
-
+    @Test
+    public void shouldReturnScoreSimple() {
+        assertEquals(44.398, cipher.score("etaoi"), 0.001);
+    }
 }

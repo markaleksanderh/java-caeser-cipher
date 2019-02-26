@@ -33,6 +33,45 @@ public class CaeserCipher {
     }
 
     public String decipher(String encrypted) {
+        String candidate;
+        int candidateScore;
+        for (int i = 0; i < alphaLower.length(); i++) {
+            String s = encipher(encrypted, i);
+//            System.out.println(s);
+        }
         return encrypted;
+    }
+
+
+    public double score(String encrypted) {
+        double score = 0;
+        for (int i = 0; i < encrypted.length(); i++) {
+            String letter = encrypted.substring(i,i+1);
+            switch(letter) {
+                case "E":
+                case "e":
+                    score += 12.702;
+                    break;
+                case "T":
+                case "t":
+                    score += 9.056;
+                    break;
+                case "A":
+                case "a":
+                    score += 8.167;
+                    break;
+                case "O":
+                case "o":
+                    score += 7.507;
+                    break;
+                case "I":
+                case "i":
+                    score += 6.966;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return score;
     }
 }
